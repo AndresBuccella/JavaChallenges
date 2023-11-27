@@ -27,6 +27,6 @@ public class Reto_0 {
 	}
 	public static void main(String[] args) {
         // Código del método main
-        Reto_0.fizzbuzz();
+        fizzbuzz();
     }
 }
