@@ -9,4 +9,24 @@ package reto_0;
  */
 public class Reto_0 {
 	
+	Reto_0(){
+		
+	}
+	public static String fizzbuzz() {
+		for(int i = 1; i <= 100; i++) {
+			if(i%3==0 && i%5==0)
+				System.out.println("fizzbuzz");
+			else if(i%3==0)
+				System.out.println("fizz");
+			else if(i%5==0)
+				System.out.println("buzz");
+			else
+				System.out.println(i);
+		}
+		return null;
+	}
+	public static void main(String[] args) {
+        // Código del método main
+        Reto_0.fizzbuzz();
+    }
 }
