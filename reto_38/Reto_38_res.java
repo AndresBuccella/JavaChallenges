@@ -1,46 +1,21 @@
 package reto_38;
 
-public class Reto_38_res {
-	import java.util.ArrayList;
-	import java.util.Collections;
-	import java.util.LinkedList;
-
-	public class Main {
-
-		public static void main(String[] args) {
-
-			ArrayList<Integer> arr = new ArrayList<>();
-			arr.add(1);
-			arr.add(5);
-			arr.add(3);
-			arr.add(2);
-			ArrayList<LinkedList<Integer>> arrC = reto_38(arr, 6);
-			String resultado = "";
-			for(LinkedList<Integer> ll:arrC) {
-				resultado+="[";
-				for(Integer i : ll) {
-					resultado += i + ", ";
-				}
-				resultado+="], ";
-				
-			}
-			System.out.println(resultado);
-			
-
-		}
-		
-		/*
-		 * Crea una función que encuentre todas las combinaciones de los números
-		 * de una lista que suman el valor objetivo.
-		 * - La función recibirá una lista de números enteros positivos
-		 *   y un valor objetivo.
-		 * - Para obtener las combinaciones sólo se puede usar
-		 *   una vez cada elemento de la lista (pero pueden existir
-		 *   elementos repetidos en ella).
-		 * - Ejemplo: Lista = [1, 5, 3, 2],  Objetivo = 6
-		 *   Soluciones: [1, 5] y [1, 3, 2] (ambas combinaciones suman 6)
-		 *   (Si no existen combinaciones, retornar una lista vacía)
-		 */
+/*
+ * Crea una función que encuentre todas las combinaciones de los números
+ * de una lista que suman el valor objetivo.
+ * - La función recibirá una lista de números enteros positivos
+ *   y un valor objetivo.
+ * - Para obtener las combinaciones sólo se puede usar
+ *   una vez cada elemento de la lista (pero pueden existir
+ *   elementos repetidos en ella).
+ * - Ejemplo: Lista = [1, 5, 3, 2],  Objetivo = 6
+ *   Soluciones: [1, 5] y [1, 3, 2] (ambas combinaciones suman 6)
+ *   (Si no existen combinaciones, retornar una lista vacía)
+ */
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+public class Reto_38_res{
 		
 		public static ArrayList<LinkedList<Integer>> reto_38(ArrayList<Integer> arr, int target) {
 			ArrayList<LinkedList<Integer>> result = new ArrayList<>();
@@ -73,6 +48,26 @@ public class Reto_38_res {
 				}
 			System.out.println(status);
 		}
+
+	public static void main(String[] args) {
+
+		ArrayList<Integer> arr = new ArrayList<>();
+		arr.add(1);
+		arr.add(5);
+		arr.add(3);
+		arr.add(2);
+		ArrayList<LinkedList<Integer>> arrC = reto_38(arr, 6);
+		String resultado = "";
+		for(LinkedList<Integer> ll:arrC) {
+			resultado+="[";
+			for(Integer i : ll) {
+				resultado += i + ", ";
+			}
+			resultado+="], ";
+			
+		}
+		System.out.println(resultado);
+		
 
 	}
 
