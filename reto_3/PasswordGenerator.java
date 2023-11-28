@@ -40,9 +40,14 @@ public class PasswordGenerator {
 	}
 
 	private static char generateLetterChar(boolean lowercase) {
-		char[] dictionary = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
+/*		char[] dictionary = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
 				's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 		char character = dictionary[(int) Math.round(Math.random() * (dictionary.length - 1))];
+*/		
+		int[] dictionary = new int[25];
+		for(int i = 0; i < dictionary.length; i++)
+			dictionary[i] = i+97;
+		char character = Character.valueOf((char) dictionary[(int) Math.round(Math.random() * (dictionary.length - 1))]);
 		if (lowercase)
 			return character;
 		else
@@ -50,14 +55,34 @@ public class PasswordGenerator {
 	}
 
 	private static char generateSymbolChar() {
-		char[] symbolDictionary = { 'º', 'ª', '\\', '!', '|', '"', '@', '·', '#', '$', '~', '%', '€', '&', '¬', '/',
+		/*char[] symbolDictionary = { 'º', 'ª', '\\', '!', '|', '"', '@', '·', '#', '$', '~', '%', '€', '&', '¬', '/',
 				'(', ')', '=', '\'', '?', '¡', '¿', '^', '`', '[', ']', '*', '+', '¨', '´', '{', '}', 'ç', 'Ç', ',',
-				';', '.', ':', '-', '_' };
-		return symbolDictionary[(int) Math.round(Math.random() * (symbolDictionary.length - 1))];
+				';', '.', ':', '-', '_' };*/
+		
+		/* ASCII code numbers
+		 * 33 to 47 = 15
+		 * 58 to 64 = 7
+		 * 91 to 96 = 6
+		 * 123 to 126 = 4
+		 * 
+		 * extended ASCII codes
+		 * 128 to 255 = 128
+		*/
+		int[] symbolDictionary = new int[160]; // 32 without extended ASCII codes
+		for(int i = 0; i < 15; i++)
+			symbolDictionary[i] = i+33;
+		for(int i = 15; i < 22; i++)
+			symbolDictionary[i] = i+43;
+		for(int i = 22; i < 28; i++)
+			symbolDictionary[i] = i+69;
+		for(int i = 28; i < 32; i++)
+			symbolDictionary[i] = i+95;
+		for(int i = 32; i < 160; i++)
+			symbolDictionary[i] = i+96;
+		return Character.valueOf((char)symbolDictionary[(int) Math.round(Math.random() * (symbolDictionary.length - 1))]);
 	}
 
 	public static void main(String[] args) {
-		// generate();
 		int passLenght = (int) Math.floor(Math.random() * 8 + 8);
 		boolean uppercase = true;
 		boolean lowercase = true;
