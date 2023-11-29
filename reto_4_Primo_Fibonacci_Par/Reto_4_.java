@@ -1,11 +1,11 @@
 package reto_4_Primo_Fibonacci_Par;
 
 /*
- * Escribe un programa que, dado un número, compruebe y muestre si es primo,
+ * Escribe un programa que, dado un nÃºmero, compruebe y muestre si es primo,
  * fibonacci y par.
  * Ejemplos:
- * - Con el número 2, nos dirá: "2 es primo, fibonacci y es par"
- * - Con el número 7, nos dirá: "7 es primo, no es fibonacci y es impar"
+ * - Con el nÃºmero 2, nos dirÃ¡: "2 es primo, fibonacci y es par"
+ * - Con el nÃºmero 7, nos dirÃ¡: "7 es primo, no es fibonacci y es impar"
  */
 public class Reto_4_ {
 
@@ -59,5 +59,7 @@ public class Reto_4_ {
 
 	public static void main(String[] args) {
 		System.out.println(primoFibonacciPar(0));
+		int v = 'ðŸ—¿';
+		System.out.println();
 	}
 }
